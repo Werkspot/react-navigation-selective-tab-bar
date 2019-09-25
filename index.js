@@ -15,8 +15,10 @@ import CrossFadeIcon from "./CrossFadeIcon";
 import withDimensions from "./withDimensions";
 
 export type TabBarOptions = {
+  background?: string,
   keyboardHidesTabBar: boolean,
   activeTintColor?: string,
+  display: Array<string>,
   inactiveTintColor?: string,
   activeBackgroundColor?: string,
   inactiveBackgroundColor?: string,
@@ -309,7 +311,7 @@ class TabBarBottom extends React.Component<Props, State> {
                 ],
                 // Absolutely position the tab bar so that the content is below it
                 // This is needed to avoid gap at bottom when the tab bar is hidden
-                position: this.state.keyboard ? "absolute" : null
+                position: this.state.keyboard ? "absolute" : "relative"
               }
             : null
         ]}
